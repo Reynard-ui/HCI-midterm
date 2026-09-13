@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #402913 0%, #5E3C1D 100%);
+      font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    }
+    .container { text-align: center; padding: 40px 20px; }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      font-family: 'Genty Sans', 'DM Sans', cursive;
+      line-height: 1;
+      background: linear-gradient(90deg, #F7BE64, #E2D5BE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .error-message {
+      font-size: 1.5rem; margin-bottom: 8px; color: #F2F0E2;
+      font-family: 'Kalam', cursive;
+    }
+    .error-sub { font-size: 1rem; color: #E2D5BE; margin-bottom: 40px; }
+    .home-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #F7BE64;
+      color: #402913;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .home-btn:hover { background: #5E3C1D; color: #F2F0E2; transform: translateY(-2px); }
+    .emoji { font-size: 4rem; margin-bottom: 20px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="emoji">🥖</span>
+    <div class="error-code">404</div>
+    <p class="error-message">Oops! This page has gone to the oven.</p>
+    <p class="error-sub">The page you are looking for might have been removed or is temporarily unavailable.</p>
+    <a href="index.html" class="home-btn">Back to the Bakery</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meow Crust — Artisan Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-side nav-side-left">
+        <a class="logo" href="#home"><img src="assets/logo.png" alt="Meow Crust"></a>
+        <a class="nav-link nav-story" data-i18n="heroStory" href="#about">Our Story</a>
+      </div>
+      <div class="nav-side nav-side-right">
+        <a class="nav-link nav-menu" data-i18n="navMenu" href="menu.html">Menu</a>
+        <a class="nav-link nav-fav" data-i18n="navFav" href="menu.html?cat=favorites">♥ Favorites</a>
+        <button class="cart-btn" id="cartBtn"><span data-i18n="navBasket">🧺 Basket</span> (<span id="cartCount">0</span>)</button>
+        <button class="lang-btn" id="langBtn" title="Ganti bahasa / Switch language">ID</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT SLIDESHOW -->
+  <section id="spotlight" class="section slideshow-section">
+    <h2 class="section-title" data-i18n="spotTitle">Fresh From the Oven</h2>
+    <div class="slideshow" id="slideshow">
+      <button class="slide-arrow" id="slidePrev" aria-label="Previous">&lsaquo;</button>
+      <div class="slideshow-track" id="slideshowTrack"></div>
+      <button class="slide-arrow slide-arrow-next" id="slideNext" aria-label="Next">&rsaquo;</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="section-title" data-i18n="aboutTitle">Our Story</h2>
+        <p data-i18n="aboutP1">Hearth &amp; Crumb began with a simple belief: good bread takes time. We mill our grains in-house, culture our own sourdough starters, and bake everything in small batches each morning.</p>
+        <p data-i18n="aboutP2">Everything you taste is made from whole grains, cultured butter, real honey, and patience — because the flavor is worth the wait.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number">40+</span>
+          <span class="stat-label" data-i18n="stat1">Daily Bakes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4.9</span>
+          <span class="stat-label" data-i18n="stat2">Average Rating</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">12K+</span>
+          <span class="stat-label" data-i18n="stat3">Happy Regulars</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">8</span>
+          <span class="stat-label" data-i18n="stat4">Years Baking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <h2 class="section-title" data-i18n="contactTitle">Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p data-i18n="contactAddr"><strong>📍</strong> 42 Grain Mill Lane, Old Town</p>
+        <p data-i18n="contactPhone"><strong>📞</strong> (555) 867-5309</p>
+        <p data-i18n="contactEmail"><strong>✉️</strong> hello@meowcrust.com</p>
+        <p data-i18n="contactHours"><strong>🕐</strong> Mon–Sat: 7am – 6pm &nbsp;·&nbsp; Sun: 8am – 4pm</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" data-i18n-ph="phName" placeholder="Your Name" required />
+        <input type="email" data-i18n-ph="phEmail" placeholder="Your Email" required />
+        <textarea data-i18n-ph="phMsg" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="sendMsg">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- BASKET MODAL -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 data-i18n="basketTitle">🧺 Your Basket</h2>
+        <button class="close-btn" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-msg" data-i18n="basketEmpty">Your basket is empty.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total"><span data-i18n="total">Total:</span> <span id="cartTotal">$0.00</span></div>
+        <button class="btn btn-primary" id="checkoutBtn" data-i18n="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-i18n="footerCopy">&copy; 2026 Meow Crust Artisan Bakery. Baked with patience.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
