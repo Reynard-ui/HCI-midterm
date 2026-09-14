@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Menu — Meow Crust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-solid">
+      <div class="nav-side nav-side-left">
+        <a class="logo" href="index.html"><img src="assets/logo.png" alt="Meow Crust"></a>
+      </div>
+      <div class="nav-side nav-side-right">
+        <a class="nav-link" data-i18n="navPastries" href="menu.html?cat=pastries">Pastry</a>
+        <a class="nav-link" data-i18n="navPies" href="menu.html?cat=pies">Pie</a>
+        <a class="nav-link" data-i18n="navBreads" href="menu.html?cat=breads">Bread</a>
+        <a class="nav-link" data-i18n="navCakes" href="menu.html?cat=cakes">Cake</a>
+        <a class="nav-link nav-fav" data-i18n="navFav" href="menu.html?cat=favorites">♥ Favorites</a>
+        <button class="cart-btn" id="cartBtn"><span data-i18n="navBasket">🧺 Basket</span> (<span id="cartCount">0</span>)</button>
+        <button class="lang-btn" id="langBtn" title="Ganti bahasa / Switch language">ID</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MENU -->
+  <section id="menu" class="section menu-section">
+    <div class="menu-search">
+      <span class="menu-search-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="menuSearch" data-i18n-ph="searchPh" placeholder="Search the menu…" aria-label="Search the menu">
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Items injected by JS -->
+    </div>
+    <a href="index.html" class="back-home" data-i18n="backHome">← Back to Home</a>
+  </section>
+
+  <!-- BASKET MODAL -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 data-i18n="basketTitle">🧺 Your Basket</h2>
+        <button class="close-btn" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-msg" data-i18n="basketEmpty">Your basket is empty.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total"><span data-i18n="total">Total:</span> <span id="cartTotal">$0.00</span></div>
+        <button class="btn btn-primary" id="checkoutBtn" data-i18n="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-menu">
+    <div class="footer-left">
+      <div class="footer-block" id="about">
+        <h3 data-i18n="footerStoryTitle">Our Story</h3>
+        <p data-i18n="footerStory">Good bread takes time. We mill our grains in-house, culture our own
+           sourdough starters, and bake everything in small batches each morning.</p>
+      </div>
+      <div class="footer-block" id="contact">
+        <h3 data-i18n="footerContactTitle">Get in Touch</h3>
+        <p data-i18n="contactAddr">📍 42 Grain Mill Lane, Old Town</p>
+        <p data-i18n="contactPhone">📞 (555) 867-5309</p>
+        <p data-i18n="contactEmail">✉️ hello@meowcrust.com</p>
+        <p data-i18n="contactHours">🕐 Mon–Sat: 7am – 6pm · Sun: 8am – 4pm</p>
+      </div>
+    </div>
+    <p class="footer-copy" data-i18n="footerCopy">&copy; 2026 Meow Crust Artisan Bakery. Baked with patience.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
