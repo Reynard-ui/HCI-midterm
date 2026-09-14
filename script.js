@@ -193,7 +193,7 @@ const I18N = {
     favEmpty: 'No favorites yet. Tap the heart on any treat to save it here.',
     addBtn: 'Add to Basket', each: 'each',
     menuTitle: 'Our Menu', favsTitle: 'My Favorites',
-    ctaBreads: 'See Breads', ctaCakes: 'See Cakes', ctaPies: 'See Pies'
+    ctaBreads: 'See Breads', ctaPastries: 'See Pastries', ctaCakes: 'See Cakes', ctaPies: 'See Pies'
   },
   id: {
     navBreads: 'Roti', navPastries: 'Pastry', navPies: 'Pai',
@@ -244,7 +244,7 @@ const I18N = {
     favEmpty: 'Belum ada favorit. Tekan ikon hati di setiap menu untuk menyimpannya di sini.',
     addBtn: 'Tambah ke Keranjang', each: 'per item',
     menuTitle: 'Menu Kami', favsTitle: 'Favorit Saya',
-    ctaBreads: 'Lihat Roti', ctaCakes: 'Lihat Kue', ctaPies: 'Lihat Pai'
+    ctaBreads: 'Lihat Roti', ctaPastries: 'Lihat Pastry', ctaCakes: 'Lihat Kue', ctaPies: 'Lihat Pai'
   }
 };
 
@@ -833,7 +833,7 @@ toggleNavState();
 
   // Slide content is language-aware: titles come from menuName(), copy from t()
   const slideDefs = [
-    { id: 13, ctaKey: 'ctaCakes', link: 'menu.html?cat=cakes', image: 'assets/slide-butter-croissant.png', full: true, ctaClass: 'cta-right' },
+    { id: 4, ctaKey: 'ctaPastries', link: 'menu.html?cat=pastries', image: 'assets/slide-butter-croissant.png', full: true, ctaClass: 'cta-right' },
     { id: 12, ctaKey: 'ctaCakes', link: 'menu.html?cat=cakes', image: 'assets/slide-strawberry-cheesecake.png', full: true, ctaClass: 'cta-left' },
     { id: 3, ctaKey: 'ctaBreads', link: 'menu.html?cat=breads', image: 'assets/slide-pretzel.png', full: true, ctaClass: 'cta-right' },
     { id: 16, ctaKey: 'ctaPies', link: 'menu.html?cat=pies', image: 'assets/slide-raspberry-pie.png', full: true, ctaClass: 'cta-left' }
