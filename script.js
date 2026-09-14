@@ -564,6 +564,7 @@ function generateOrderId() {
         <div class="confirm-card">
           <div class="confirm-logo" id="confirmLogo"><img src="assets/logo.png" alt="Meow Crust"></div>
           <div class="confirm-cat" id="confirmCat" hidden><img src="assets/delivery-cat.gif" alt="Meow's on the way"></div>
+          <audio id="catPurr" src="assets/cat-purr.mp3" preload="auto"></audio>
           <h2 id="confirmTitle"></h2>
           <p id="confirmSub"></p>
           <div class="order-id-box" id="orderIdBox" hidden>
@@ -595,6 +596,13 @@ const confirmSub = document.getElementById('confirmSub');
 const orderIdBox = document.getElementById('orderIdBox');
 const orderIdValue = document.getElementById('orderIdValue');
 const closeConfirm = document.getElementById('closeConfirm');
+const catPurr = document.getElementById('catPurr');
+
+function stopPurr() {
+  if (!catPurr) return;
+  catPurr.pause();
+  catPurr.currentTime = 0;
+}
 
 function setShipMethod(m) {
   shipMethod = m;
@@ -626,7 +634,10 @@ function showConfirmation(order) {
     confirmTitle.hidden = true;  // the GIF carries its own "Meow's on their way!!" text
     confirmSub.hidden = true;
     confirmOverlay.classList.add('delivery');
+    // purr starts as the cat GIF appears (user clicked "place order" moments ago)
+    if (catPurr) { catPurr.currentTime = 0; catPurr.play().catch(() => {}); }
   } else {
+    stopPurr();
     confirmTitle.textContent = t('confirmPickupTitle');
     confirmSub.textContent = t('confirmPickupSub');
     confirmLogo.hidden = false;
@@ -648,10 +659,12 @@ optPickup.addEventListener('click', () => setShipMethod('pickup'));
 optDelivery.addEventListener('click', () => setShipMethod('delivery'));
 
 // Confirmation popup dismissal: × button or backdrop click
-closeConfirm.addEventListener('click', () => confirmOverlay.classList.remove('open'));
+closeConfirm.addEventListener('click', () => { stopPurr(); confirmOverlay.classList.remove('open'); });
 confirmOverlay.addEventListener('click', (e) => {
-  if (e.target === confirmOverlay) confirmOverlay.classList.remove('open');
+  if (e.target === confirmOverlay) { stopPurr(); confirmOverlay.classList.remove('open'); }
 });
+// "Back to Home" navigates away — stop the purr before leaving
+confirmOverlay.querySelectorAll('.confirm-home').forEach(a => a.addEventListener('click', stopPurr));
 
 placeOrderBtn.addEventListener('click', () => {
   if (cart.length === 0) {
